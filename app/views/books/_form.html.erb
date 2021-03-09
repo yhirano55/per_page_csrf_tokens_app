@@ -24,4 +24,10 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+
+  <% if book.persisted? %>
+    <div class="actions">
+      <%= form.submit 'hello', formaction: "#{book_hello_path(book)}" %>
+    </div>
+  <% end %>
 <% end %>
