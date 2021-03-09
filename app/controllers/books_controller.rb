@@ -48,8 +48,8 @@ class BooksController < ApplicationController
   end
 
   def hello
-    flash[:alert] = 'hello'
-    redirect_back fallback_location: books_path
+    @book = Book.find(params[:book_id])
+    redirect_to @book, alert: 'hello'
   end
 
   # DELETE /books/1 or /books/1.json
